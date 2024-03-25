@@ -1,6 +1,5 @@
-let totalGeral = 0;
-document.getElementById ("lista-produtos").innerHTML = " "; // para limpar o exemplo ("celular") e deixar ele vazio
-document.getElementById ("valor-total").textContent = "R$ 0" // para limpar o valor total do exemplo (1400) e deixar ele com 0
+let totalGeral;
+limpar();
 
 function adicionar () { 
 //recuperar valores: nome do produto, quantidade e valor   
@@ -32,5 +31,10 @@ document.getElementById ("quantidade").value = " "; // para limpar o quantidade 
 }
 
 function limpar () {
+
+totalGeral = 0;
+document.getElementById ("lista-produtos").innerHTML = " "; // para limpar o exemplo ("celular") e deixar ele vazio
+document.getElementById ("valor-total").textContent = "R$ 0" // para limpar o valor total do exemplo (1400) e deixar ele com 0
+
 
 }
