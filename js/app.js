@@ -1,3 +1,7 @@
+let totalGeral = 0;
+document.getElementById ("lista-produtos").innerHTML = " "; // para limpar o exemplo ("celular") e deixar ele vazio
+document.getElementById ("valor-total").textContent = "R$ 0" // para limpar o valor total do exemplo (1400) e deixar ele com 0
+
 function adicionar () { 
 //recuperar valores: nome do produto, quantidade e valor   
 let produto = document.getElementById ("produto").value; // pegar no HTML o ID do produto e o valor 
@@ -18,10 +22,13 @@ let carrinho = document.getElementById ("lista-produtos"); // pegando a "section
 carrinho.innerHTML = carrinho.innerHTML + `<section class="carrinho__produtos" id="lista-produtos">
 <section class="carrinho__produtos__produto">
   <span class="texto-azul">${quantidade}x</span> ${nomeProduto} <span class="texto-azul">${preco}</span>
-</section>` // substituindo os nomes dos produtos no HMTL pelas variaveis do JS // concatenando para aparecer mais itens na lista
+</section>`; // substituindo os nomes dos produtos no HMTL pelas variaveis do JS // concatenando para aparecer mais itens na lista
 
 // atualizar o valor total:
-
+totalGeral = totalGeral + preco; // definido no começo do codigo
+let campoTotal = document.getElementById ("valor-total"); // pegando no HTML o ID do valor total
+campoTotal.textContent = `R$ ${totalGeral}`; // fazendo ele mudar 
+document.getElementById ("quantidade").value = " "; // para limpar o quantidade e deixar em vazio ou zero
 }
 
 function limpar () {
